@@ -4,6 +4,8 @@ import random
 import time
 from PIL import Image
 import argparse
+import os.path as osp
+import json
 
 if sys.version_info.major != 3:
     print('Please run under Python3')
@@ -23,8 +25,10 @@ VERSION = "0.0.1"
 
 # 我申请的 Key，随便用，嘻嘻嘻
 # 申请地址 http://ai.qq.com
-AppID = '1106858595'
-AppKey = 'bNUNgOpY6AeeJjFu'
+with open(osp.join(osp.dirname(__file__), '..', 'auth', 'qqai.json')) as fh:
+    auth = json.load(fh)
+AppID = auth['appid']
+AppKey = auth['appkey']
 
 DEBUG_SWITCH = True
 FACE_PATH = 'face/'
