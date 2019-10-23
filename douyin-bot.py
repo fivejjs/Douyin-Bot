@@ -25,7 +25,7 @@ VERSION = "0.0.1"
 
 # 我申请的 Key，随便用，嘻嘻嘻
 # 申请地址 http://ai.qq.com
-with open(osp.join(osp.dirname(__file__), '..', 'auth', 'qqai.json')) as fh:
+with open(osp.join(osp.dirname(__file__), 'auth', 'qqai.json')) as fh:
     auth = json.load(fh)
 AppID = auth['appid']
 AppKey = auth['appkey']
